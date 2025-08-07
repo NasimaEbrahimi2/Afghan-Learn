@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="css.css">
+
+<style>
+  * {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+  }
+
+  body {
+
+    font-family: Arial, sans-serif;
+
+  }
+
+  .navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 15px;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+  }
+
+  .logo img {
+
+    height: 40px;
+
+  }
+
+  .language-selector {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+  }
+
+  .language-selector img {
+
+    height: 18px;
+
+  }
+
+  .language-selector select {
+
+    padding: 3px 6px;
+
+    font-size: 14px;
+
+  }
+
+  .menu-toggle {
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    display: none;
+
+  }
+
+  .mobile-menu {
+
+    display: none;
+
+    background: #f9f9f9;
+
+    padding: 10px 20px;
+
+  }
+
+  .mobile-menu ul {
+
+    list-style: none;
+
+  }
+
+  .mobile-menu li {
+
+    margin: 8px 0;
+
+  }
+
+  .mobile-menu a {
+
+    text-decoration: none;
+
+    color: #333;
+
+  }
+
+  .hero {
+
+    position: relative;
+
+    background: url("img/rr.jpg") no-repeat center center/cover;
+
+    height: 250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+  }
+
+  .overlay {
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 20px 40px;
+
+  }
+
+  .overlay h1 {
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+  }
+
+  .breadcrumb {
+
+    padding: 15px;
+
+    font-size: 14px;
+
+    background: #f2f2f2;
+
+    color: #333;
+
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .menu-toggle {
+
+      display: block;
+
+    }
+
+    .mobile-menu {
+
+      display: none;
+
+    }
+
+    .mobile-menu.active {
+
+      display: block;
+
+    }
+
+  }
+
+  /* بخش هدر */
+
+  .tab-header {
+    display: flex;
+
+    border-bottom: 2px solid #eee;
+
+  }
+
+  .tab-btn {
+
+    flex: 1;
+
+    padding: 15px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border-bottom: 3px solid transparent;
+
+  }
+
+  .tab-btn.active {
+
+    border-bottom: 3px solid #2962ff;
+
+    background: #f9f9f9;
+
+  }
+
+  .tab-content {
+
+    padding: 15px;
+
+    background: #fff;
+
+  }
+
+  .tab-panel {
+
+    display: none;
+
+  }
+
+  .tab-panel.active {
+
+    display: block;
+
+  }
+
+  .tab-panel ul {
+
+    list-style: none;
+
+    padding-left: 0;
+
+  }
+
+  .tab-panel li {
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #eee;
+
+    display: flex;
+
+    justify-content: space-between;
+
+  }
+</style>
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pashto Courses</title>
+
+
+
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="logo">
+
+      <img src="img/nn.png" alt="Learn Afghan Logo">
+
+    </div>
+
+
+    <div class="language-selector">
+
+      <img src="img/kk.png" alt="English">
+
+      <select>
+
+        <option selected>English</option>
+
+        <option>Pashto</option>
+
+        <option>Dari</option>
+
+      </select>
+
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu">
+
+    <ul>
+
+      <li><a href="#">Home</a></li>
+
+      <li><a href="#">Courses</a></li>
+
+      <li><a href="#">Grade – 7</a></li>
+
+    </ul>
+
+  </nav>
+
+  <section class="hero">
+
+    <div class="overlay">
+
+      <h1>PASHTO COURSES</h1>
+
+    </div>
+
+  </section>
+
+  <section class="breadcrumb">
+
+    <p>Home » Courses » Grade – 7</p>
+    <!-- <--!   بخش vll  -->
+  </section>
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="img/VII.png" class="img-fluid rounded" alt="About Foodie Hub">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  </div>
+  </div>
+  </section>
+  <!-- بخش سکشن ها -->
+  <div class="tab-header">
+
+    <div class="tab-btn active" onclick="openTab('features')">🔖</div>
+
+    <div class="tab-btn" onclick="openTab('materials')">📦</div>
+
+    <div class="tab-btn" onclick="openTab('profile')">👤</div>
+
+  </div>
+
+  <div class="tab-content">
+
+    <div id="features" class="tab-panel active">
+
+      <h3>COURSE FEATURES</h3>
+
+      <ul>
+
+        <li>📘 Lectures: <strong>37</strong></li>
+
+        <li>❓ Quizzes: <strong>7</strong></li>
+
+        <li>⏰ Duration: <strong>Lifetime access</strong></li>
+
+        <li>📈 Skill level: <strong>All levels</strong></li>
+
+        <li>🈯 Language: <strong>English, Pashto</strong></li>
+
+        <li>🎓 Students: <strong>33</strong></li>
+
+        <li>📜 Certificate: <strong>Yes</strong></li>
+
+        <li>✏️ Assessments: <strong>Yes</strong></li>
+
+      </ul>
+
+    </div>
+
+    <div id="materials" class="tab-panel">
+
+      <h3>COURSE MATERIALS</h3>
+
+      <p>PDFs, Videos, Presentations, etc...</p>
+
+    </div>
+
+    <div id="profile" class="tab-panel">
+
+      <h3>TEACHER PROFILE</h3>
+
+      <p>Teacher: Nasima Ebrahimi</p>
+
+    </div>
+
+  </div>
+
+  <script>
+
+
+    const toggleBtn = document.getElementById('menu-toggle');
+
+    const menu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+
+      menu.classList.toggle('active');
+
+    });
+
+
+  </script>
+
+  <script>
+
+    function openTab(tabId) {
+
+      const tabs = document.querySelectorAll(".tab-panel");
+
+      const buttons = document.querySelectorAll(".tab-btn");
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      document.getElementById(tabId).classList.add("active");
+
+      event.target.classList.add("active");
+
+    }
+
+
+
+  </script>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About Learn Afghan</h4>
+        <p>Learn Afghan Incorporated is a section 501(c).</p>
+        <p>(3)Organaization (EIN: 92-1094823)</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p>🧧: info@learnafghan.org</p>
+        <p>🎓: Our LMS Portal</p>
+      </div>
+      <div class="footer-section">
+        <h4>SOCIALS</h4>
+        <p> <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> </p>
+      </div>
+    </div>
+    <p class="footer-bottom">All Rights Reserved by Learn Afghan.</p>
+
+  </footer>
+</body>
+
+</html>
